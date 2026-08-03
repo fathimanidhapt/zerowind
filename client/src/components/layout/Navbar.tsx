@@ -264,7 +264,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="absolute top-[110px] right-0 w-full md:w-[45%] md:min-w-[540px] bg-[#222222] shadow-2xl z-40 overflow-y-auto max-h-[calc(100vh-110px)] rounded-bl-3xl pointer-events-auto"
+            className="absolute top-[110px] right-0 w-full sm:w-[480px] md:w-[24%] md:min-w-[320px] bg-[#222222] shadow-2xl z-40 overflow-y-auto max-h-[calc(100vh-110px)] rounded-bl-3xl pointer-events-auto"
           >
             <div className="w-full pt-10 pb-12 px-10 flex flex-col items-start">
               <div className="flex flex-col items-start gap-10 w-full mb-12">
