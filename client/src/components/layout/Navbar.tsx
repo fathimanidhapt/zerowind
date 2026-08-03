@@ -269,8 +269,8 @@ const Navbar: React.FC = () => {
             <div className="w-full pt-10 pb-12 px-10 flex flex-col items-center">
               <div className="flex flex-col items-center gap-10 w-full mb-12">
                 
-                {/* 1. TECHNOLOGY SECTION */}
-                <div className="w-full border-b border-white/5 pb-8">
+                {/* 1. TECHNOLOGY SECTION (Mobile only) */}
+                <div className="w-full border-b border-white/5 pb-8 md:hidden">
                   <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
                     Technology
                   </h3>
@@ -303,8 +303,8 @@ const Navbar: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 2. FEATURES SECTION */}
-                <div className="w-full border-b border-white/5 pb-8">
+                {/* 2. FEATURES SECTION (Mobile only) */}
+                <div className="w-full border-b border-white/5 pb-8 md:hidden">
                   <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
                     Features
                   </h3>
