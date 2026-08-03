@@ -8,6 +8,16 @@ const Navbar: React.FC = () => {
   const [showFeatures, setShowFeatures] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuHovered, setMenuHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,16 +123,31 @@ const Navbar: React.FC = () => {
           
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="flex justify-center items-center w-8 h-8 group cursor-pointer border-none bg-transparent ml-2 md:ml-6"
+            onMouseEnter={() => setMenuHovered(true)}
+            onMouseLeave={() => setMenuHovered(false)}
+            onMouseMove={handleMouseMove}
+            className="relative flex justify-center items-center w-12 h-12 group border-none bg-transparent ml-2 md:ml-6 cursor-none"
           >
+            {menuHovered && (
+              <div
+                className="absolute w-10 h-10 bg-[#dfff00] rounded-xl flex items-center justify-center pointer-events-none z-30 shadow-lg"
+                style={{
+                  left: mousePos.x,
+                  top: mousePos.y,
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                <span className="text-black text-xl font-bold leading-none">+</span>
+              </div>
+            )}
             {showMenu ? (
-              <div className="flex flex-row gap-[6px]">
+              <div className="flex flex-row gap-[6px] relative z-10">
                 <span className="w-[1.5px] h-[22px] bg-white group-hover:bg-[#dfff00] transition-colors"></span>
                 <span className="w-[1.5px] h-[22px] bg-white group-hover:bg-[#dfff00] transition-colors"></span>
                 <span className="w-[1.5px] h-[22px] bg-white group-hover:bg-[#dfff00] transition-colors"></span>
               </div>
             ) : (
-              <div className="flex flex-col gap-[6px] w-full items-center">
+              <div className="flex flex-col gap-[6px] w-8 items-center relative z-10">
                 <span className="w-8 h-[1.5px] bg-[#dfff00] group-hover:bg-white transition-colors"></span>
                 <span className="w-8 h-[1.5px] bg-[#dfff00] group-hover:bg-white transition-colors"></span>
                 <span className="w-8 h-[1.5px] bg-[#dfff00] group-hover:bg-white transition-colors"></span>
