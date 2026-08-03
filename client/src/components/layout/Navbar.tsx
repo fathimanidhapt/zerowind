@@ -266,15 +266,15 @@ const Navbar: React.FC = () => {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="absolute top-[110px] right-0 w-full md:w-[45%] md:min-w-[540px] bg-[#222222] shadow-2xl z-40 overflow-y-auto max-h-[calc(100vh-110px)] rounded-bl-3xl pointer-events-auto"
           >
-            <div className="w-full pt-10 pb-12 px-10 flex flex-col items-center">
-              <div className="flex flex-col items-center gap-10 w-full mb-12">
+            <div className="w-full pt-10 pb-12 px-10 flex flex-col items-start">
+              <div className="flex flex-col items-start gap-10 w-full mb-12">
                 
                 {/* 1. TECHNOLOGY SECTION (Mobile only) */}
                 <div className="w-full border-b border-white/5 pb-8 md:hidden">
-                  <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
+                  <h3 className="text-white text-left text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
                     Technology
                   </h3>
-                  <div className="grid grid-cols-2 gap-4 w-full max-w-xl mx-auto">
+                  <div className="grid grid-cols-2 gap-4 w-full max-w-xl">
                     {techCards.map((card, idx) => {
                       const path = `/technology/${card.title.toLowerCase()}`;
                       return (
@@ -305,10 +305,10 @@ const Navbar: React.FC = () => {
 
                 {/* 2. FEATURES SECTION (Mobile only) */}
                 <div className="w-full border-b border-white/5 pb-8 md:hidden">
-                  <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
+                  <h3 className="text-white text-left text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
                     Features
                   </h3>
-                  <div className="flex flex-col gap-4 w-full max-w-xl mx-auto">
+                  <div className="flex flex-col gap-4 w-full max-w-xl">
                     {featureCards.map((card, idx) => (
                       <Link
                         to={`/features#${card.title.toLowerCase()}`}
@@ -350,7 +350,7 @@ const Navbar: React.FC = () => {
                 </div>
 
                 {/* 3. LINKS SECTION */}
-                <div className="flex flex-col items-center gap-6 w-full pt-4">
+                <div className="flex flex-col items-start gap-6 w-full pt-4">
                   <Link to="/" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
                     HOME
                   </Link>
@@ -363,7 +363,7 @@ const Navbar: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-[14px] font-bold tracking-widest uppercase border-t border-white/5 pt-6 w-full justify-center">
+              <div className="flex items-center gap-4 text-[14px] font-bold tracking-widest uppercase w-full justify-start mt-2">
                 <button className="text-gray-400 hover:text-white transition-colors">IT</button>
                 <span className="text-gray-500 mb-1">.</span>
                 <button className="text-[#dfff00] transition-colors">EN</button>
