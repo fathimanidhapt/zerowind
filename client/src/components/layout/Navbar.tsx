@@ -130,248 +130,248 @@ const Navbar: React.FC = () => {
             )}
           </button>
         </div>
+      </div>
 
-        
-        <AnimatePresence>
-          {showTechnologies && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              onMouseEnter={handleTechMouseEnter}
-              onMouseLeave={handleTechMouseLeave}
-              className="absolute top-[110px] right-0 w-full md:w-[36%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-hidden rounded-bl-3xl pointer-events-auto"
-            >
-              <div className="w-full pt-6 pb-6 px-6 flex flex-col items-center">
-                <div className="grid grid-cols-2 gap-4 w-full mb-4">
-                  {techCards.map((card, idx) => {
-                    const path = `/technology/${card.title.toLowerCase()}`;
-                    return (
-                      <Link
-                        to={path}
-                        key={idx}
-                        onClick={(e) => {
-                          setShowTechnologies(false);
-                          if (card.title === 'FIT') {
-                            e.preventDefault();
-                            window.dispatchEvent(
-                              new CustomEvent("tech-transition", {
-                                detail: { to: path, color: "#dfff00" }
-                              })
-                            );
-                          }
-                        }}
-                        className={`relative rounded-xl overflow-hidden cursor-pointer group block bg-black ${card.colSpan === 2 ? 'col-span-2 aspect-[24/8]' : 'col-span-1 aspect-[16/9]'}`}
-                      >
-                        <img
-                          src={card.image}
-                          alt={card.title}
-                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                        />
-                        <div className="absolute inset-0 bg-black/45 group-hover:bg-[#dfff00]/30 transition-colors duration-300"></div>
-                        <div className="absolute inset-0 flex items-center justify-center p-4">
-                          <img
-                            src={card.icon}
-                            alt={`${card.title} Logo`}
-                            className={`w-auto object-contain filter brightness-200 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] ${
-                              card.title === 'FIT' || card.title === 'VAPORA'
-                                ? "h-6 md:h-8"
-                                : "h-10 md:h-12"
-                            }`}
-                          />
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-                <p className="text-gray-400 text-[10px] md:text-xs font-semibold tracking-widest uppercase text-center max-w-sm px-2">
-                  Select one of our outdoor fabrics and discover its technical characteristics.
-                </p>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        
-        <AnimatePresence>
-          {showFeatures && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              onMouseEnter={handleFeatMouseEnter}
-              onMouseLeave={handleFeatMouseLeave}
-              className="absolute top-[110px] right-0 w-full md:w-[36%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-hidden rounded-bl-3xl pointer-events-auto"
-            >
-              <div className="w-full pt-8 pb-8 px-8 flex flex-col items-center">
-                <div className="flex flex-col gap-6 w-full mb-8">
-                  {featureCards.map((card, idx) => (
+      
+      <AnimatePresence>
+        {showTechnologies && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            onMouseEnter={handleTechMouseEnter}
+            onMouseLeave={handleTechMouseLeave}
+            className="absolute top-[110px] right-0 w-full md:w-[36%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-hidden rounded-bl-3xl pointer-events-auto"
+          >
+            <div className="w-full pt-6 pb-6 px-6 flex flex-col items-center">
+              <div className="grid grid-cols-2 gap-4 w-full mb-4">
+                {techCards.map((card, idx) => {
+                  const path = `/technology/${card.title.toLowerCase()}`;
+                  return (
                     <Link
-                      to={`/features#${card.title.toLowerCase()}`}
+                      to={path}
                       key={idx}
-                      onClick={() => {
-                        setShowFeatures(false);
-                        if (window.location.pathname === '/features') {
-                          const el = document.getElementById(card.title.toLowerCase());
-                          if (el) {
-                            el.scrollIntoView({ behavior: 'smooth' });
-                          }
+                      onClick={(e) => {
+                        setShowTechnologies(false);
+                        if (card.title === 'FIT') {
+                          e.preventDefault();
+                          window.dispatchEvent(
+                            new CustomEvent("tech-transition", {
+                              detail: { to: path, color: "#dfff00" }
+                            })
+                          );
                         }
                       }}
-                      className="relative w-full rounded-3xl border border-white/20 p-8 flex flex-row items-center gap-8 cursor-pointer group bg-[#222222] hover:bg-[#1a1a1a] hover:border-white/40 transition-all duration-300"
+                      className={`relative rounded-xl overflow-hidden cursor-pointer group block bg-black ${card.colSpan === 2 ? 'col-span-2 aspect-[24/8]' : 'col-span-1 aspect-[16/9]'}`}
                     >
                       <img
-                        src={card.icon}
-                        alt={`${card.title} icon`}
-                        className={`w-14 h-14 md:w-16 md:h-16 object-contain transition-transform duration-500 group-hover:scale-110 shrink-0 ${
-                          card.title === 'RELIFE' ? 'animate-spin' : ''
-                        }`}
-                        style={
-                          card.title === 'RELIFE'
-                            ? { animationDuration: '12s' }
-                            : { filter: 'invert(1) brightness(2)' }
-                        }
+                        src={card.image}
+                        alt={card.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                       />
-                      <div className="flex flex-col items-start gap-2 text-left">
+                      <div className="absolute inset-0 bg-black/45 group-hover:bg-[#dfff00]/30 transition-colors duration-300"></div>
+                      <div className="absolute inset-0 flex items-center justify-center p-4">
                         <img
-                          src={card.image}
-                          alt={card.title}
-                          className="w-full max-w-[160px] h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                          src={card.icon}
+                          alt={`${card.title} Logo`}
+                          className={`w-auto object-contain filter brightness-200 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] ${
+                            card.title === 'FIT' || card.title === 'VAPORA'
+                              ? "h-6 md:h-8"
+                              : "h-10 md:h-12"
+                          }`}
                         />
-                        <p className="text-white/80 font-display font-semibold text-xs tracking-wider uppercase">
-                          {card.title === 'ZWR' ? 'WATER REPELLENT TREATMENT' : 'ECO-FRIENDLY SOLUTIONS'}
-                        </p>
                       </div>
                     </Link>
-                  ))}
-                </div>
-                <p className="text-gray-400 text-[10px] md:text-xs font-semibold tracking-widest uppercase text-center max-w-sm px-2 leading-relaxed">
-                  SELECT ONE OF OUR FEATURES AND DISCOVER ITS TECHNICAL CHARACTERISTICS
-                </p>
+                  );
+                })}
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <p className="text-gray-400 text-[10px] md:text-xs font-semibold tracking-widest uppercase text-center max-w-sm px-2">
+                Select one of our outdoor fabrics and discover its technical characteristics.
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-        
-        <AnimatePresence>
-          {showMenu && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute top-[110px] right-0 w-full md:w-[38%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-y-auto max-h-[calc(100vh-110px)] rounded-bl-3xl pointer-events-auto"
-            >
-              <div className="w-full pt-10 pb-12 px-10 flex flex-col items-center">
-                <div className="flex flex-col items-center gap-10 w-full mb-12">
-                  
-                  {/* 1. TECHNOLOGY SECTION */}
-                  <div className="w-full border-b border-white/5 pb-8">
-                    <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
-                      Technology
-                    </h3>
-                    <div className="grid grid-cols-2 gap-4 w-full max-w-xl mx-auto">
-                      {techCards.map((card, idx) => {
-                        const path = `/technology/${card.title.toLowerCase()}`;
-                        return (
-                          <Link
-                            to={path}
-                            key={idx}
-                            onClick={() => setShowMenu(false)}
-                            className={`relative rounded-xl overflow-hidden cursor-pointer group block bg-black ${card.colSpan === 2 ? 'col-span-2 aspect-[24/8]' : 'col-span-1 aspect-[16/10]'}`}
-                          >
-                            <img
-                              src={card.image}
-                              alt={card.title}
-                              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                            />
-                            <div className="absolute inset-0 bg-black/45 group-hover:bg-[#dfff00]/20 transition-colors duration-300"></div>
-                            
-                            {/* Brand styled title overlay */}
-                            <div className="absolute inset-0 flex items-center justify-center p-4">
-                              <span className="text-white font-display font-black uppercase text-xl md:text-2xl tracking-[0.1em] italic select-none pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                                {card.title}
-                              </span>
-                            </div>
-                          </Link>
-                        );
-                      })}
+      
+      <AnimatePresence>
+        {showFeatures && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            onMouseEnter={handleFeatMouseEnter}
+            onMouseLeave={handleFeatMouseLeave}
+            className="absolute top-[110px] right-0 w-full md:w-[36%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-hidden rounded-bl-3xl pointer-events-auto"
+          >
+            <div className="w-full pt-8 pb-8 px-8 flex flex-col items-center">
+              <div className="flex flex-col gap-6 w-full mb-8">
+                {featureCards.map((card, idx) => (
+                  <Link
+                    to={`/features#${card.title.toLowerCase()}`}
+                    key={idx}
+                    onClick={() => {
+                      setShowFeatures(false);
+                      if (window.location.pathname === '/features') {
+                        const el = document.getElementById(card.title.toLowerCase());
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    }}
+                    className="relative w-full rounded-3xl border border-white/20 p-8 flex flex-row items-center gap-8 cursor-pointer group bg-[#222222] hover:bg-[#1a1a1a] hover:border-white/40 transition-all duration-300"
+                  >
+                    <img
+                      src={card.icon}
+                      alt={`${card.title} icon`}
+                      className={`w-14 h-14 md:w-16 md:h-16 object-contain transition-transform duration-500 group-hover:scale-110 shrink-0 ${
+                        card.title === 'RELIFE' ? 'animate-spin' : ''
+                      }`}
+                      style={
+                        card.title === 'RELIFE'
+                          ? { animationDuration: '12s' }
+                          : { filter: 'invert(1) brightness(2)' }
+                      }
+                    />
+                    <div className="flex flex-col items-start gap-2 text-left">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="w-full max-w-[160px] h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <p className="text-white/80 font-display font-semibold text-xs tracking-wider uppercase">
+                        {card.title === 'ZWR' ? 'WATER REPELLENT TREATMENT' : 'ECO-FRIENDLY SOLUTIONS'}
+                      </p>
                     </div>
-                  </div>
+                  </Link>
+                ))}
+              </div>
+              <p className="text-gray-400 text-[10px] md:text-xs font-semibold tracking-widest uppercase text-center max-w-sm px-2 leading-relaxed">
+                SELECT ONE OF OUR FEATURES AND DISCOVER ITS TECHNICAL CHARACTERISTICS
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-                  {/* 2. FEATURES SECTION */}
-                  <div className="w-full border-b border-white/5 pb-8">
-                    <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
-                      Features
-                    </h3>
-                    <div className="flex flex-col gap-4 w-full max-w-xl mx-auto">
-                      {featureCards.map((card, idx) => (
+      
+      <AnimatePresence>
+        {showMenu && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="absolute top-[110px] right-0 w-full md:w-[45%] md:min-w-[540px] bg-[#222222] shadow-2xl z-40 overflow-y-auto max-h-[calc(100vh-110px)] rounded-bl-3xl pointer-events-auto"
+          >
+            <div className="w-full pt-10 pb-12 px-10 flex flex-col items-center">
+              <div className="flex flex-col items-center gap-10 w-full mb-12">
+                
+                {/* 1. TECHNOLOGY SECTION */}
+                <div className="w-full border-b border-white/5 pb-8">
+                  <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
+                    Technology
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4 w-full max-w-xl mx-auto">
+                    {techCards.map((card, idx) => {
+                      const path = `/technology/${card.title.toLowerCase()}`;
+                      return (
                         <Link
-                          to={`/features#${card.title.toLowerCase()}`}
+                          to={path}
                           key={idx}
-                          onClick={() => {
-                            setShowMenu(false);
-                            if (window.location.pathname === '/features') {
-                              const el = document.getElementById(card.title.toLowerCase());
-                              if (el) {
-                                el.scrollIntoView({ behavior: 'smooth' });
-                              }
-                            }
-                          }}
-                          className="relative w-full rounded-2xl border border-white/10 p-5 flex flex-row items-center gap-6 cursor-pointer group bg-[#1e1e1e] hover:bg-[#151515] hover:border-white/30 transition-all duration-300"
+                          onClick={() => setShowMenu(false)}
+                          className={`relative rounded-xl overflow-hidden cursor-pointer group block bg-black ${card.colSpan === 2 ? 'col-span-2 aspect-[24/8]' : 'col-span-1 aspect-[16/10]'}`}
                         >
                           <img
-                            src={card.icon}
-                            alt={`${card.title} icon`}
-                            className={`w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110 shrink-0 ${
-                              card.title === 'RELIFE' ? 'animate-spin' : ''
-                            }`}
-                            style={
-                              card.title === 'RELIFE'
-                                ? { animationDuration: '12s' }
-                                : { filter: 'invert(1) brightness(2)' }
-                            }
+                            src={card.image}
+                            alt={card.title}
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                           />
-                          <div className="flex flex-col items-start gap-1 text-left">
-                            <span className="text-white font-display font-extrabold uppercase text-sm tracking-wider">
+                          <div className="absolute inset-0 bg-black/45 group-hover:bg-[#dfff00]/20 transition-colors duration-300"></div>
+                          
+                          {/* Brand styled title overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center p-4">
+                            <span className="text-white font-display font-black uppercase text-xl md:text-2xl tracking-[0.1em] italic select-none pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                               {card.title}
                             </span>
-                            <p className="text-white/60 font-body text-[10px] tracking-wider uppercase">
-                              {card.title === 'ZWR' ? 'WATER REPELLENT TREATMENT' : 'ECO-FRIENDLY SOLUTIONS'}
-                            </p>
                           </div>
                         </Link>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* 3. LINKS SECTION */}
-                  <div className="flex flex-col items-center gap-6 w-full pt-4">
-                    <Link to="/" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
-                      HOME
-                    </Link>
-                    <Link to="/news" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
-                      NEWS
-                    </Link>
-                    <Link to="/contacts" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
-                      CONTACTS
-                    </Link>
+                      );
+                    })}
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 text-[14px] font-bold tracking-widest uppercase border-t border-white/5 pt-6 w-full justify-center">
-                  <button className="text-gray-400 hover:text-white transition-colors">IT</button>
-                  <span className="text-gray-500 mb-1">.</span>
-                  <button className="text-[#dfff00] transition-colors">EN</button>
+                {/* 2. FEATURES SECTION */}
+                <div className="w-full border-b border-white/5 pb-8">
+                  <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
+                    Features
+                  </h3>
+                  <div className="flex flex-col gap-4 w-full max-w-xl mx-auto">
+                    {featureCards.map((card, idx) => (
+                      <Link
+                        to={`/features#${card.title.toLowerCase()}`}
+                        key={idx}
+                        onClick={() => {
+                          setShowMenu(false);
+                          if (window.location.pathname === '/features') {
+                            const el = document.getElementById(card.title.toLowerCase());
+                            if (el) {
+                              el.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }
+                        }}
+                        className="relative w-full rounded-2xl border border-white/10 p-5 flex flex-row items-center gap-6 cursor-pointer group bg-[#1e1e1e] hover:bg-[#151515] hover:border-white/30 transition-all duration-300"
+                      >
+                        <img
+                          src={card.icon}
+                          alt={`${card.title} icon`}
+                          className={`w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110 shrink-0 ${
+                            card.title === 'RELIFE' ? 'animate-spin' : ''
+                          }`}
+                          style={
+                            card.title === 'RELIFE'
+                              ? { animationDuration: '12s' }
+                              : { filter: 'invert(1) brightness(2)' }
+                          }
+                        />
+                        <div className="flex flex-col items-start gap-1 text-left">
+                          <span className="text-white font-display font-extrabold uppercase text-sm tracking-wider">
+                            {card.title}
+                          </span>
+                          <p className="text-white/60 font-body text-[10px] tracking-wider uppercase">
+                            {card.title === 'ZWR' ? 'WATER REPELLENT TREATMENT' : 'ECO-FRIENDLY SOLUTIONS'}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. LINKS SECTION */}
+                <div className="flex flex-col items-center gap-6 w-full pt-4">
+                  <Link to="/" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
+                    HOME
+                  </Link>
+                  <Link to="/news" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
+                    NEWS
+                  </Link>
+                  <Link to="/contacts" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
+                    CONTACTS
+                  </Link>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+
+              <div className="flex items-center gap-4 text-[14px] font-bold tracking-widest uppercase border-t border-white/5 pt-6 w-full justify-center">
+                <button className="text-gray-400 hover:text-white transition-colors">IT</button>
+                <span className="text-gray-500 mb-1">.</span>
+                <button className="text-[#dfff00] transition-colors">EN</button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
