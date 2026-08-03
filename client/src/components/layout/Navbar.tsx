@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 flex justify-between items-start transition-all duration-500 ${
       anyDropdownOpen ? 'bg-[#222222] h-[110px] pointer-events-auto shadow-lg' : 'bg-transparent pointer-events-none'
     }`}>
-      {/* Left Side (Logo) */}
+      
       <div className={`h-[110px] flex items-center pl-6 md:pl-12 pr-12 md:pr-16 transition-all duration-500 pointer-events-auto relative z-20 ${
         !anyDropdownOpen ? 'bg-[#222222] rounded-br-[40px] shadow-lg' : 'bg-transparent'
       }`}>
@@ -82,9 +82,9 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Right Side Wrapper */}
+      
       <div className="relative pointer-events-auto flex flex-col items-end z-20">
-        {/* Right Side (Navigation Items) */}
+        
         <div className={`h-[110px] flex items-center pl-12 md:pl-16 pr-6 md:pr-12 gap-8 md:gap-12 transition-all duration-500 ${
           !anyDropdownOpen ? 'bg-[#222222] rounded-bl-[40px] shadow-lg' : 'bg-transparent'
         }`}>
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Hamburger Menu Toggle */}
+          
           <button
             onClick={() => setShowMenu(!showMenu)}
             className="flex justify-center items-center w-8 h-8 group cursor-pointer border-none bg-transparent ml-2 md:ml-6"
@@ -131,7 +131,7 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Technologies Mega Menu */}
+        
         <AnimatePresence>
           {showTechnologies && (
             <motion.div
@@ -193,7 +193,7 @@ const Navbar: React.FC = () => {
           )}
         </AnimatePresence>
 
-        {/* Features Mega Menu */}
+        
         <AnimatePresence>
           {showFeatures && (
             <motion.div
@@ -255,7 +255,7 @@ const Navbar: React.FC = () => {
           )}
         </AnimatePresence>
 
-        {/* Main Menu Dropdown */}
+        
         <AnimatePresence>
           {showMenu && (
             <motion.div

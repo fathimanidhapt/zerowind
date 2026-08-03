@@ -8,7 +8,7 @@ export default function Services() {
     <section className="pt-6 pb-24 px-6 md:px-12 max-w-[1800px] mx-auto">
 
 
-      {/* Grid of tech cards */}
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service, idx) => (
           <motion.div

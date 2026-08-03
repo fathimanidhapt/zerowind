@@ -20,7 +20,7 @@ export default function SubscribeSection() {
     <>
       <section className="relative w-full px-4 md:px-8 py-8">
         <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[650px] rounded-2xl overflow-hidden shadow-2xl bg-neutral-950 flex flex-col justify-center px-8 md:px-16">
-          {/* Background Video */}
+          
           <video
             src="/video/newsletter-bg.mp4"
             autoPlay
@@ -30,7 +30,7 @@ export default function SubscribeSection() {
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           />
 
-          {/* Content */}
+          
           <div className="relative z-10 w-full max-w-2xl space-y-6">
             <span className="text-white/70 tracking-widest font-display text-[10px] md:text-xs font-normal block">
               Subscribe to newsletter
@@ -58,7 +58,7 @@ export default function SubscribeSection() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 max-w-[600px] pt-2">
-                {/* Input Group */}
+                
                 <div className="flex flex-row items-stretch w-full">
                   <input
                     type="email"
@@ -77,7 +77,7 @@ export default function SubscribeSection() {
                   </button>
                 </div>
 
-                {/* Checkbox */}
+                
                 <label className="flex items-start space-x-3 text-[11px] text-white/50 cursor-pointer select-none max-w-lg mt-3">
                   <input
                     type="checkbox"
@@ -96,7 +96,7 @@ export default function SubscribeSection() {
         </div>
       </section>
 
-      {/* Expert Advice Call To Action */}
+      
       <section className="relative w-full px-4 md:px-8 py-16 md:py-24 flex flex-col items-center justify-center text-center bg-transparent">
         <h3 className="font-display text-white text-base md:text-lg lg:text-[22px] max-w-2xl font-thin leading-relaxed tracking-wider mb-8">
           Request expert advice on our products and technologies.

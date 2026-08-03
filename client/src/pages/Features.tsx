@@ -20,7 +20,7 @@ export default function Features() {
 
   return (
     <div className="bg-neutral-950 text-white min-h-screen pt-28 pb-20 relative overflow-hidden select-none">
-      {/* Page entrance wipe overlay */}
+      
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: "-100%" }}
@@ -28,7 +28,7 @@ export default function Features() {
         className="fixed inset-0 bg-brand z-[9999] pointer-events-none"
       />
 
-      {/* Feature Sections Stack */}
+      
       <div className="space-y-16 w-full relative z-10">
         {features.map((feat) => {
           const isZwr = feat.id === "zwr";
@@ -40,10 +40,10 @@ export default function Features() {
               id={feat.id}
               className="scroll-mt-32 flex flex-col w-full"
             >
-              {/* 1. Large Hero Video Card (Wider & Shorter max-w-[1600px]) */}
+              
               <div className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8">
                 <div className="relative w-full h-[350px] sm:h-[440px] md:h-[530px] lg:h-[590px] rounded-3xl overflow-hidden bg-neutral-900 border border-white/5 shadow-2xl">
-                  {/* Background Video */}
+                  
                   <video
                     src={isZwr ? "/video/0a804172.mp4" : "/video/592ec493.mp4"}
                     autoPlay
@@ -52,10 +52,10 @@ export default function Features() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover opacity-80"
                   />
-                  {/* Vignette Overlay */}
+                  
                   <div className="absolute inset-0 bg-black/40" />
 
-                  {/* Centered Logo & Icon Content */}
+                  
                   <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center select-none z-10 gap-6">
                     <div className="w-[120px] overflow-hidden relative bg-transparent py-1 select-none pointer-events-none">
                       <div className="animate-marquee whitespace-nowrap flex" style={{ animationDuration: "6s" }}>
@@ -73,7 +73,7 @@ export default function Features() {
                       className="h-10 sm:h-12 md:h-16 w-auto object-contain brightness-200"
                     />
 
-                    {/* SVG Icon Outline */}
+                    
                     <img
                       src={isZwr ? "/images/download (4).svg" : "/images/download (10).svg"}
                       alt=""
@@ -86,14 +86,14 @@ export default function Features() {
                 </div>
               </div>
 
-              {/* 2. Text Details & Call to Action (Card 2 - max-w-[1600px] left-aligned) */}
+              
               <div className="max-w-[1600px] w-full mx-auto px-6 md:px-8 mt-12 mb-28 select-text text-left">
                 <div className="max-w-4xl w-full">
                   <span className="text-neutral-400 font-display font-medium text-[9px] sm:text-[10px] md:text-xs tracking-[0.25em] uppercase">
                     {subtitle}
                   </span>
 
-                  {/* Giant Headline Text with Faded Ends */}
+                  
                   <h2
                     className="font-outfit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-[32px] leading-relaxed tracking-wide text-white mt-5 select-none"
                     style={{ wordSpacing: '2px' }}
@@ -108,7 +108,7 @@ export default function Features() {
                     )}
                   </h2>
 
-                  {/* Contact Us Button matching the screenshot styling */}
+                  
                   <div className="mt-12 select-none">
                     <Link
                       to="/contact"

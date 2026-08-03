@@ -70,7 +70,7 @@ export default function Vapora() {
 
   return (
     <div className="bg-neutral-950 text-white min-h-screen relative overflow-hidden select-none">
-      {/* Page transition overlay */}
+      
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: "-100%" }}
@@ -78,7 +78,7 @@ export default function Vapora() {
         className="fixed inset-0 bg-brand z-[9999] pointer-events-none"
       />
 
-      {/* Floating Side Watermark */}
+      
       <AnimatePresence>
         {showSideWatermark && (
           <motion.div
@@ -97,9 +97,9 @@ export default function Vapora() {
         )}
       </AnimatePresence>
 
-      {/* 1. Full-screen Hero Section with background video */}
+      
       <div className="relative w-full h-screen flex flex-col justify-between items-center text-center p-6 bg-black overflow-hidden">
-        {/* Background Video */}
+        
         <video
           src="https://player.vimeo.com/progressive_redirect/playback/1009789176/rendition/1080p/file.mp4?loc=external&signature=3bac940fa50c5c610928197c3bbc3bae2612918994bd93b949a537591c2ab240"
           autoPlay
@@ -108,10 +108,10 @@ export default function Vapora() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-100"
         />
-        {/* Dark overlay */}
+        
         <div className="absolute inset-0 bg-black/15 z-0" />
 
-        {/* Empty spacer to push down centered content */}
+        
         <div className="h-24 w-full" />
 
         <motion.div
@@ -130,7 +130,7 @@ export default function Vapora() {
           />
         </motion.div>
 
-        {/* Bottom controls */}
+        
         <motion.button
           onClick={scrollToContent}
           initial={{ opacity: 1 }}
@@ -145,18 +145,18 @@ export default function Vapora() {
         </motion.button>
       </div>
 
-      {/* 2. Details Section (glided down target) */}
+      
       <div id="vapora-details" className="max-w-7xl mx-auto px-6 md:px-12 py-24 relative z-10">
 
-        {/* Center Content Row: Description */}
+        
         <div className="relative pl-0 md:pl-48 mb-20 w-full">
-          {/* Paragraph description */}
+          
           <h3 className="font-display font-black text-2xl md:text-4xl md:leading-[1.3] text-white tracking-normal max-w-3xl">
             {tech.description}
           </h3>
         </div>
 
-        {/* 4 Specifications Outline Cards Grid */}
+        
         <div className="pl-0 md:pl-48 w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-28 max-w-4xl">
             {tech.specifications.map((spec, idx) => {
@@ -189,7 +189,7 @@ export default function Vapora() {
           </div>
         </div>
 
-        {/* 3. Detailed Technology Description Section */}
+        
         <div className="pl-0 md:pl-48 mb-28 w-full">
           <div className="max-w-4xl space-y-6">
             <motion.p
@@ -222,10 +222,10 @@ export default function Vapora() {
           </div>
         </div>
 
-        {/* 4. Wind Protection & Grams Info Section */}
+        
         <div className="mb-28 w-full">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16 w-full">
-            {/* Video Container (Left) */}
+            
             <div className="w-full md:w-[65%] md:max-w-[650px] relative aspect-video rounded-2xl overflow-hidden bg-neutral-900 border border-white/5 shadow-2xl shrink-0">
               <img
                 src="https://www.zerowind.it/media/images/desktop/vapora-breathable-soul%40690x340_r.jpeg.webp"
@@ -235,7 +235,7 @@ export default function Vapora() {
               </div>
             </div>
 
-            {/* Grams Details (Right) */}
+            
             <div className="flex flex-col items-center justify-center text-center space-y-3.5 p-6 shrink-0 md:pr-4">
               <span className="text-[#dfff00] font-display font-medium text-[9px] sm:text-[10px] tracking-[0.25em] uppercase">
                 GRAMS
@@ -250,10 +250,10 @@ export default function Vapora() {
           </div>
         </div>
 
-        {/* Related Products Section */}
+        
         {relatedProducts.length > 0 && (
           <div className="flex flex-col items-center justify-center w-full mt-24">
-            {/* Minimal Header (Centered Loop Marquee) */}
+            
             <div className="w-full flex justify-center mb-16 select-none bg-transparent">
               <div className="w-[230px] overflow-hidden relative bg-transparent py-1">
                 <div className="animate-marquee whitespace-nowrap flex" style={{ animationDuration: "8s" }}>
@@ -267,7 +267,7 @@ export default function Vapora() {
               </div>
             </div>
 
-            {/* Vertical Stack of Images with Details on Click/Touch */}
+            
             <div className="flex flex-col items-center justify-center gap-12 md:gap-16 w-full">
               {relatedProducts.map((prod) => {
                 const isActive = activeProductId === prod.id;
@@ -286,7 +286,7 @@ export default function Vapora() {
                       className={`flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 max-w-5xl w-full ${isActive ? "bg-neutral-900/10 p-8 rounded-3xl" : "py-4"
                         }`}
                     >
-                      {/* Left Column: Details Card (only when active) */}
+                      
                       <AnimatePresence>
                         {isActive && (
                           <motion.div
@@ -302,7 +302,7 @@ export default function Vapora() {
                                   {prod.name}
                                 </h3>
 
-                                {/* Tech & Feature Row */}
+                                
                                 <div className="flex items-center gap-8">
                                   <div className="space-y-1.5">
                                     <span className="text-[9px] tracking-wider text-neutral-500 font-display font-semibold uppercase">
@@ -326,7 +326,7 @@ export default function Vapora() {
                                   </div>
                                 </div>
 
-                                {/* Description Text */}
+                                
                                 <p className="text-neutral-300 text-xs md:text-sm font-body leading-relaxed font-normal">
                                   Custom product exclusively for customer. {prod.description}
                                 </p>
@@ -336,7 +336,7 @@ export default function Vapora() {
                         )}
                       </AnimatePresence>
 
-                      {/* Right Column: Product Image */}
+                      
                       <motion.div
                         layout
                         className={`relative w-full max-w-[220px] md:max-w-[300px] flex-shrink-0 group transition-all duration-500 flex items-center justify-center ${isActive ? "md:max-w-[360px]" : ""
@@ -359,7 +359,7 @@ export default function Vapora() {
         )}
       </div>
 
-      {/* 5. Contact Section */}
+      
       <section className="relative w-full py-16 md:py-24 flex flex-col items-center justify-center text-center bg-transparent">
         <h3 className="font-body text-white text-base md:text-lg lg:text-[20px] max-w-xl font-light leading-relaxed tracking-wider mb-8">
           Request expert advice on our products and technologies.
@@ -372,20 +372,20 @@ export default function Vapora() {
         </Link>
       </section>
 
-      {/* 6. Fit Promo Banner Section (Links to FIT) */}
+      
       <section className="relative w-full px-4 md:px-8 pt-10 md:pt-14 pb-24 flex justify-center bg-transparent">
         <Link
           to="/technology/fit"
           className="relative w-full max-w-[1400px] h-[350px] sm:h-[450px] md:h-[520px] rounded-2xl overflow-hidden shadow-2xl flex flex-col items-center justify-center text-center group border border-white/5"
         >
-          {/* Background Image */}
+          
           <img
             src="/images/imgi_7_shutterstock-1022568799%401320x1020_r.jpeg.webp"
             alt="Discover FIT"
             className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
           />
 
-          {/* Text/Logo Content */}
+          
           <div className="relative z-10 flex flex-col items-center justify-center space-y-4 px-6 select-none">
             <span className="font-body text-white text-[10px] sm:text-xs font-light tracking-[0.4em] uppercase text-white/80">
               DISCOVER THE

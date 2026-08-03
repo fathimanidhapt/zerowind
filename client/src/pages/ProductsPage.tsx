@@ -27,12 +27,12 @@ export default function ProductsPage() {
       }}
       className="relative h-screen overflow-hidden bg-gradient-to-b from-[#161616] via-[#222222] to-[#101010] text-white"
     >
-      {/* Background Glow */}
+      
       <div className="absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d8ff00]/10 blur-[180px]" />
       </div>
 
-      {/* Vertical Label */}
+      
       <div
         className="
           absolute
@@ -53,7 +53,7 @@ export default function ProductsPage() {
         ZEROWIND COLLECTION
       </div>
 
-      {/* Decorative Numbers */}
+      
       <div className="absolute right-16 top-28 text-right z-30 pointer-events-none select-none">
         <p className="text-sm uppercase tracking-[0.4em] text-white/40">
           Collection
@@ -63,7 +63,7 @@ export default function ProductsPage() {
         </p>
       </div>
 
-      {/* Product Counter */}
+      
       <div className="absolute right-16 top-1/2 z-30 -translate-y-1/2 text-right">
         <p className="text-7xl font-black">
           {String(activeIndex + 1).padStart(2, "0")}
@@ -73,7 +73,7 @@ export default function ProductsPage() {
         </p>
       </div>
 
-      {/* Huge Outline Text */}
+      
       <AnimatePresence mode="wait">
         <motion.h1
           key={active.id}
@@ -104,7 +104,7 @@ export default function ProductsPage() {
         </motion.h1>
       </AnimatePresence>
 
-      {/* Main Product */}
+      
       <Link
         to={`/product/${active.id}`}
         className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 hover:scale-[1.03] transition-transform duration-500 cursor-pointer"
@@ -140,7 +140,7 @@ export default function ProductsPage() {
           />
         </AnimatePresence>
       </Link>
-      {/* Left Content */}
+      
       <div className="absolute left-16 top-1/2 z-30 w-[380px] -translate-y-1/2">
 
         <motion.div
@@ -192,8 +192,8 @@ export default function ProductsPage() {
         </motion.div>
 
       </div>
-      {/* Navigation */}
-      {/* Bottom Product Strip */}
+      
+      
       <div className="absolute bottom-8 left-1/2 z-40 flex -translate-x-1/2 items-center gap-5">
 
         <button
@@ -246,7 +246,7 @@ export default function ProductsPage() {
         </button>
 
       </div>
-      {/* Bottom Fade */}
+      
       <div className="
         absolute
         bottom-0

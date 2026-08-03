@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#e2de00] text-black pt-16 pb-8 overflow-hidden">
-      {/* Infinite Marquee Typography Bar */}
+      
       <div className="py-2 mb-36 overflow-hidden select-none bg-transparent">
         <div className="animate-marquee whitespace-nowrap flex space-x-12">
           {Array.from({ length: 12 }).map((_, i) => (
@@ -30,9 +30,9 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-center">
-        {/* Navigation Grid - 4 Columns */}
+        
         <div className="lg:col-span-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {/* Column 1: Technologies */}
+          
           <div>
             <h4 className="font-body text-sm tracking-wide text-black mb-4">
               Technologies
@@ -77,7 +77,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: Features */}
+          
           <div>
             <h4 className="font-body text-sm tracking-wide text-black mb-4">
               Features
@@ -96,7 +96,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Zerowind */}
+          
           <div>
             <h4 className="font-body text-sm tracking-wide text-black mb-4">
               Zerowind
@@ -115,7 +115,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contacts */}
+          
           <div>
             <h4 className="font-body text-sm tracking-wide text-black mb-4">
               Contacts
@@ -135,10 +135,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Newsletter Section Card */}
+        
         <div className="lg:col-span-5 max-w-[440px] lg:max-w-none">
           <div className="relative rounded-[24px] overflow-hidden p-8 bg-black text-white shadow-xl min-h-[250px] flex flex-col justify-center">
-            {/* Background Video */}
+            
             <video
               src="/video/884db69f-0e17ed62.mp4"
               autoPlay
@@ -183,7 +183,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social Icons Vertical Stack */}
+        
         <div className="lg:col-span-1 flex lg:flex-col items-center justify-center gap-6 py-4 lg:py-0">
           <a
             href={CORPORATE_INFO.instagram}
@@ -212,9 +212,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Footer Bottom Legal Credits */}
+      
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start text-[11px] text-black space-y-6 md:space-y-0 font-body uppercase tracking-widest mt-40 pb-4">
-        {/* Left Side Links */}
+        
         <div className="flex flex-col space-y-2">
           <div className="flex flex-wrap gap-x-12 gap-y-1">
             <Link to="/privacy" className="hover:text-black/70 transition-colors">
@@ -234,7 +234,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Right Side Corporate Info */}
+        
         <div className="text-left md:text-right max-w-xl leading-relaxed text-black">
           ZEROWIND® REA VR69979 - P.IVA 00215260233 | VIA DELLA MECCANICA 29, 37139 VERONA
         </div>

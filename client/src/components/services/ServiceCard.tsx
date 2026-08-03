@@ -61,17 +61,17 @@ export default function ServiceCard({ service, isFullWidth = false }: ServiceCar
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
-      {/* Background Image (No opacity reduction, full bright colors) */}
+      
       <img
         src={service.image}
         alt={service.name}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-105"
       />
 
-      {/* Subtle overlay by default, becomes fully clear on hover */}
+      
       <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
 
-      {/* Centered Brand Tagline (Default state) */}
+      
       <div
         className={`absolute inset-0 flex items-center justify-center p-6 pointer-events-none transition-all duration-500 ${
           active ? "opacity-0 scale-95" : "opacity-100 scale-100"
@@ -86,13 +86,13 @@ export default function ServiceCard({ service, isFullWidth = false }: ServiceCar
         />
       </div>
 
-      {/* Slide-Up Details Overlay (Transparent background) */}
+      
       <div
         className={`absolute inset-0 bg-transparent p-4 md:p-6 flex flex-col justify-center items-center gap-4 md:gap-6 transition-transform duration-500 ease-out z-10 ${
           active ? "translate-y-0" : "translate-y-full"
         }`}
       >
-        {/* Center content (Logo & Description) */}
+        
         <div className="flex flex-col justify-center items-center text-center">
           <img
             src={signatureLogoSrc}
@@ -104,7 +104,7 @@ export default function ServiceCard({ service, isFullWidth = false }: ServiceCar
           </p>
         </div>
 
-        {/* Bottom Specifications (Centered horizontally using flexbox, handles any number of items cleanly) */}
+        
         <div className="w-full">
           <div className="flex flex-row flex-wrap items-start justify-center gap-3 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
             {service.specifications.map((spec, idx) => (

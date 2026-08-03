@@ -4,13 +4,13 @@ import { ArrowLeft } from "lucide-react";
 export default function NotFound() {
   return (
     <div className="bg-neutral-950 text-white min-h-screen flex items-center justify-center font-body px-6 select-none relative overflow-hidden">
-      {/* Glow Backdrop */}
+      
       <div className="absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d8ff00]/5 blur-[160px] pointer-events-none" />
       </div>
 
       <div className="text-center relative z-10 max-w-md">
-        {/* Outline 404 Watermark */}
+        
         <h1 
           className="text-[12rem] font-display font-black leading-none text-transparent tracking-tighter"
           style={{

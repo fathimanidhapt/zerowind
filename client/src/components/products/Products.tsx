@@ -31,7 +31,7 @@ export default function Products() {
   return (
     <section className="relative h-[780px] w-full flex flex-col justify-between overflow-hidden bg-transparent py-20 my-16 md:my-28 font-body">
 
-      {/* Minimal Header (Centered Loop Marquee) */}
+      
       <div className="w-full flex justify-center mt-2 mb-2 select-none bg-transparent">
         <div className="w-[230px] overflow-hidden relative bg-transparent py-1">
           <div className="animate-marquee whitespace-nowrap flex" style={{ animationDuration: "8s" }}>
@@ -45,14 +45,14 @@ export default function Products() {
         </div>
       </div>
 
-      {/* Main Showcase Area */}
+      
       <div
         onMouseEnter={() => setIsDetailsOpen(true)}
         onMouseLeave={() => setIsDetailsOpen(false)}
         className="relative flex-grow flex items-center justify-center w-full px-6 md:px-12 py-4 mt-8"
       >
 
-        {/* Giant outline text watermark behind the jacket */}
+        
         <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden pointer-events-none select-none">
           <AnimatePresence>
             <motion.div
@@ -77,7 +77,7 @@ export default function Products() {
           </AnimatePresence>
         </div>
 
-        {/* Floating Details Overlay (Left) */}
+        
         <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-20 flex items-center gap-4 pointer-events-none">
           <AnimatePresence>
             {isDetailsOpen && (
@@ -94,7 +94,7 @@ export default function Products() {
                       {activeProduct.name}
                     </h3>
 
-                    {/* Tech & Feature Row */}
+                    
                     <div className="flex items-center gap-8">
                       <div className="space-y-1.5">
                         <span className="text-[9px] tracking-wider text-neutral-500 font-display font-semibold uppercase">
@@ -118,12 +118,12 @@ export default function Products() {
                       </div>
                     </div>
 
-                    {/* Description Text */}
+                    
                     <p className="text-neutral-300 text-xs md:text-sm font-body leading-relaxed font-normal">
                       {activeProduct.description}
                     </p>
 
-                    {/* Active Temp Range */}
+                    
                     <p className="text-neutral-300 text-xs md:text-sm font-body leading-relaxed font-normal mt-4">
                       For temperatures from {activeProduct.tempRange}
                     </p>
@@ -134,7 +134,7 @@ export default function Products() {
           </AnimatePresence>
         </div>
 
-        {/* Featured Jacket Image (overlays watermark) */}
+        
         <Link
           to={`/product/${activeProduct.id}`}
           className="relative flex items-center justify-center w-full max-w-xl h-[300px] md:h-[400px] z-10 pointer-events-auto cursor-pointer hover:scale-[1.03] active:scale-95 transition-transform duration-300 select-none"
@@ -154,7 +154,7 @@ export default function Products() {
         </Link>
       </div>
 
-      {/* Bottom Thumbnail list */}
+      
       <div className="w-full bg-transparent py-4 px-6 z-20 flex flex-col items-center shrink-0">
         <div className="flex justify-start md:justify-center items-center w-full gap-8 overflow-x-auto no-scrollbar max-w-5xl">
           {products.map((p, idx) => {

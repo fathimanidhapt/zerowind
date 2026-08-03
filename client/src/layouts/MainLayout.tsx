@@ -55,10 +55,10 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
   return (
     <div className="flex flex-col min-h-screen bg-neutral-950 text-white select-none">
-      {/* Custom dynamic cursor tracker */}
+      
       <CustomCursor />
 
-      {/* Global Transition Overlay Curtain */}
+      
       <AnimatePresence>
         {transitioning && (
           <motion.div
@@ -72,20 +72,20 @@ export default function MainLayout({ children }: MainLayoutProps) {
         )}
       </AnimatePresence>
 
-      {/* Navigation Header */}
+      
       {!isProductsPage && (
         <Navbar />
       )}
 
-      {/* Hamburger Overlay Menu */}
+      
       <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
-      {/* Content wrapper */}
+      
       <main className="flex-grow">
         {children}
       </main>
 
-      {/* Main Footer layout */}
+      
       {!isProductsPage && <Footer />}
     </div>
   );

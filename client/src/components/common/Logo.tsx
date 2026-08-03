@@ -28,13 +28,13 @@ export default function Logo({ className = "h-8 w-auto" }: LogoProps) {
         </clipPath>
       </defs>
 
-      {/* Z character */}
+      
       <path
         className="fill-brand"
         d="M7.2,10.1c.7-3.4,1.3-6.7,2-10.1h49.4l-2,10.1c-10.5,7.9-21.1,15.8-31.6,23.6h26.6c-.7,3.4-1.5,6.7-2.2,10.1H0c.7-3.4,1.5-6.7,2.2-10.1,10.5-7.9,21.1-15.7,31.6-23.6,0,0-26.6,0-26.6,0Z"
       />
 
-      {/* ZERO text (ERO after Z) */}
+      
       <motion.g
         clipPath="url(#clipsmallpath)"
         initial={{ opacity: 0, x: -15 }}
@@ -46,7 +46,7 @@ export default function Logo({ className = "h-8 w-auto" }: LogoProps) {
         <path className="fill-brand" d="M71.6.2h36.8c-.7,3.4-1.3,6.7-2,10.1h-29.3c-1.8,0-4.2,1.7-4.5,3.8-.2,1-.5,2-.7,2.9-.7,3.4-1.3,6.7-2.2,10.1,2.8-3.4,5.4-6.7,8-10.1h23.3c-.7,3.4-1.3,6.7-2.2,10.1h-29.1c-.2,1-.3,2-.5,3-.5,2.1,1,3.8,2.8,3.8h29.3c-.8,3.4-1.5,6.7-2.2,10.1h-36.8c-6.2,0-10-5.1-8.7-11.4,1.4-7,2.8-14,4.4-21.1C59.3,5.2,65.4,0,71.6,0h0Z"></path>
       </motion.g>
 
-      {/* W character group - translates left when compact, right when expanded */}
+      
       <motion.g
         animate={{ x: isFull ? 0 : -156.91 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -57,7 +57,7 @@ export default function Logo({ className = "h-8 w-auto" }: LogoProps) {
         />
       </motion.g>
 
-      {/* WIND text (IND after W) */}
+      
       <motion.g
         clipPath="url(#clipsmallpath-1)"
         initial={{ opacity: 0, x: 15 }}
@@ -69,7 +69,7 @@ export default function Logo({ className = "h-8 w-auto" }: LogoProps) {
         <path className="fill-brand" d="M320.4,21.9c1.5-7.3,3-14.6,4.5-21.9h15.1c-1.5,7.3-3,14.6-4.5,21.9-1.5,7.3-3,14.6-4.7,21.9h-15.1c1.7-7.3,3.2-14.6,4.7-21.9Z"></path>
       </motion.g>
 
-      {/* Registered trademark symbol (R) - animates position next to Z or next to W/D */}
+      
       <motion.path
         className="fill-brand"
         d="M10.5556 5.20923c0 3.16915-2.34584 5.14277-5.13153 5.14277-2.79697 0-5.14282-1.97362-5.14282-5.14277C.28125 2.0288 2.6271.0664063 5.42407.0664063 8.19849.0664062 10.5556 2.0288 10.5556 5.20923Zm-.94736 0c0-2.68419-1.91727-4.3308-4.18417-4.3308-2.27818 0-4.20675 1.64661-4.20675 4.3308 0 2.67291 1.91729 4.33079 4.20675 4.33079 2.2669 0 4.18417-1.65788 4.18417-4.33079Zm-2.88719.4624 1.28568 2.31202H6.46164L5.34511 5.8408H4.7248v2.14285H3.31503V2.35586H5.7624c1.3421 0 2.08646.65413 2.08646 1.78195-.01128.71052-.41729 1.2857-1.12781 1.53382Zm-2.00751-.80075h.77819c.56391 0 .90224-.25939.90224-.73307 0-.49624-.30449-.74436-.90224-.74436h-.77819v1.47743Z"

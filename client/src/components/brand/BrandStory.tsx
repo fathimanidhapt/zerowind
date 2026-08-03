@@ -15,9 +15,9 @@ export default function BrandStory() {
 
   return (
     <section className="py-24 px-4 md:px-8 w-full max-w-[1800px] mx-auto bg-neutral-950 text-white">
-      {/* 1. Rotator Text Section */}
+      
       <div className="relative w-full flex flex-col items-start text-left mb-16 overflow-hidden">
-        {/* Giant ZW background watermark logo */}
+        
         <svg
           className="absolute top-[-5%] right-[5%] w-[38vw] h-auto pointer-events-none select-none z-0 text-neutral-900/10 fill-current select-none"
           viewBox="0 0 395 100"
@@ -51,9 +51,9 @@ export default function BrandStory() {
           </span>
         </h2>
 
-        {/* Centered container ONLY for the paragraphs, columns, and contact button */}
+        
         <div className="w-full max-w-4xl mx-auto flex flex-col items-start text-left z-10 mt-8">
-          {/* Dynamic description split into two custom paragraphs */}
+          
           <p className="text-lg md:text-2xl font-normal leading-relaxed text-white/90 max-w-lg w-full mb-10 drop-shadow-sm">
             Passion for outdoor activities and pursuit of technicality make ZeroWind
             the ideal brand for creating performance fabrics for a wide range of uses.
@@ -77,7 +77,7 @@ export default function BrandStory() {
             </div>
           </div>
 
-          {/* Contact us Button */}
+          
           <div className="mt-8">
             <Link
               to="/contact"
@@ -89,9 +89,9 @@ export default function BrandStory() {
         </div>
       </div>
 
-      {/* 2. Features Card Grid (ZWWR & RELIFE) */}
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* ZWWR (Water Repellent) Card */}
+        
         <Link
           to="/features#zwr"
           className="relative block w-full h-[400px] md:h-[480px] rounded-2xl overflow-hidden bg-neutral-900 border border-white/5 shadow-2xl cursor-pointer"
@@ -106,7 +106,7 @@ export default function BrandStory() {
           />
           <div className="absolute inset-0 bg-black/40" />
 
-          {/* Static state logo/droplet */}
+          
           <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center gap-6">
             <div className="w-[120px] overflow-hidden relative bg-transparent py-1 select-none pointer-events-none">
               <div className="animate-marquee whitespace-nowrap flex" style={{ animationDuration: "6s" }}>
@@ -123,7 +123,7 @@ export default function BrandStory() {
               alt="ZWWR Logo"
               className="w-[200px] md:w-[240px] h-auto object-contain brightness-200"
             />
-            {/* Minimalist overlapping double droplet SVG */}
+            
             <svg
               className="w-12 h-16 text-white"
               viewBox="0 0 63 84"
@@ -142,7 +142,7 @@ export default function BrandStory() {
           </div>
         </Link>
 
-        {/* RELIFE (Eco-friendly) Card */}
+        
         <Link
           to="/features#relife"
           className="relative block w-full h-[400px] md:h-[480px] rounded-2xl overflow-hidden bg-neutral-900 border border-white/5 shadow-2xl cursor-pointer"
@@ -157,7 +157,7 @@ export default function BrandStory() {
           />
           <div className="absolute inset-0 bg-black/40" />
 
-          {/* Static state logo/recycle circle */}
+          
           <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center gap-6">
             <div className="w-[120px] overflow-hidden relative bg-transparent py-1 select-none pointer-events-none">
               <div className="animate-marquee whitespace-nowrap flex" style={{ animationDuration: "6s" }}>

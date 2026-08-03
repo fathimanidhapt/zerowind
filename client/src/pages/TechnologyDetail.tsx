@@ -80,7 +80,7 @@ export default function TechnologyDetail() {
 
   return (
     <div className="bg-neutral-950 text-white min-h-screen pt-24 pb-20">
-      {/* Page transition overlay */}
+      
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: "-100%" }}
@@ -88,7 +88,7 @@ export default function TechnologyDetail() {
         className="fixed inset-0 bg-brand z-[9999] pointer-events-none"
       />
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Back Link */}
+        
         <Link
           to="/"
           className="inline-flex items-center text-sm text-white/50 hover:text-brand transition-colors uppercase tracking-widest font-display mb-12"
@@ -96,15 +96,15 @@ export default function TechnologyDetail() {
           <ArrowLeft size={16} className="mr-2" /> Back to Technologies
         </Link>
 
-        {/* Layout Grid */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
-          {/* Info Side */}
+          
           <div className="lg:col-span-6 space-y-8">
             <div>
               <span className="text-brand uppercase tracking-widest font-display text-sm font-semibold block mb-3">
                 Active Membrane
               </span>
-              {/* Technology Signature SVG Logo */}
+              
               <div className="h-16 mb-4 flex items-center">
                 <img
                   src={`/images/${
@@ -130,7 +130,7 @@ export default function TechnologyDetail() {
               {tech.description}
             </p>
 
-            {/* Specifications Cards Grid */}
+            
             <div className="space-y-4">
               <h3 className="font-display text-sm tracking-widest uppercase text-white/40">
                 Key Technical Parameters
@@ -153,7 +153,7 @@ export default function TechnologyDetail() {
             </div>
           </div>
 
-          {/* Media/Image Side */}
+          
           <div className="lg:col-span-6 space-y-8">
             <div className="relative aspect-video lg:aspect-square rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
               <img
@@ -164,7 +164,7 @@ export default function TechnologyDetail() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
 
-            {/* Sub-spec list */}
+            
             <div className="p-8 bg-neutral-900 border border-white/5 rounded-2xl space-y-4">
               <h3 className="font-display text-sm tracking-widest uppercase text-white/40">
                 Fabric composition & construct
@@ -181,7 +181,7 @@ export default function TechnologyDetail() {
           </div>
         </div>
 
-        {/* Related Products Section */}
+        
         {relatedProducts.length > 0 && (
           <div className="border-t border-white/5 pt-20">
             <div className="mb-12 flex items-end justify-between">

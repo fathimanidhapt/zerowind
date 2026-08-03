@@ -13,7 +13,7 @@ export default function Contacts() {
 
   return (
     <div className="bg-[#262626] text-white min-h-screen pt-36 pb-20 relative overflow-hidden select-none">
-      {/* Page transition overlay */}
+      
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: "-100%" }}
@@ -21,7 +21,7 @@ export default function Contacts() {
         className="fixed inset-0 bg-brand z-[9999] pointer-events-none"
       />
       <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Contact Form Header Section */}
+        
         <div className="mb-14 max-w-[420px] sm:max-w-[520px] md:max-w-[620px]">
           <h1 className="font-outfit font-light text-xl sm:text-2xl md:text-[27px] text-[#e2de00] leading-tight tracking-wide">
             Have a question?<br />
@@ -43,7 +43,7 @@ export default function Contacts() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-12 max-w-4xl mb-24 select-text">
-            {/* Input Grid */}
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
               <div className="relative">
                 <input
@@ -77,7 +77,7 @@ export default function Contacts() {
               </div>
             </div>
 
-            {/* Textarea */}
+            
             <div className="relative pt-4">
               <textarea
                 placeholder="Message *"
@@ -87,7 +87,7 @@ export default function Contacts() {
               />
             </div>
 
-            {/* Privacy Checkbox */}
+            
             <div className="flex items-start space-x-3 pt-4 select-none">
               <input
                 type="checkbox"
@@ -103,7 +103,7 @@ export default function Contacts() {
               </label>
             </div>
 
-            {/* Submit Button */}
+            
             <div className="pt-4 select-none">
               <button
                 type="submit"
@@ -115,9 +115,9 @@ export default function Contacts() {
           </form>
         )}
 
-        {/* Footer Contact Info (Matches Screenshot 2) */}
+        
         <div className="border-t border-white/10 pt-16 mt-24 grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Column 1: Where we are */}
+          
           <div>
             <h4 className="font-outfit font-semibold text-[#e2de00] text-xs uppercase tracking-[0.15em] mb-4">
               Where we are
@@ -128,7 +128,7 @@ export default function Contacts() {
             </p>
           </div>
 
-          {/* Column 2: Contacts */}
+          
           <div>
             <h4 className="font-outfit font-semibold text-[#e2de00] text-xs uppercase tracking-[0.15em] mb-4">
               Contacts
@@ -143,7 +143,7 @@ export default function Contacts() {
             </p>
           </div>
 
-          {/* Column 3: Social Media Links */}
+          
           <div className="flex space-x-6 md:justify-end items-start">
             <a
               href="https://instagram.com"

@@ -78,19 +78,19 @@ export default function ProductDetail() {
 
   return (
     <div className="bg-[#262626] text-white min-h-screen select-none relative">
-      {/* 1. Immersive Visual Hero Section (Part 1) */}
+      
       <section className="relative w-full h-[80vh] min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Soft radial ambient glow */}
+        
         <div className="absolute inset-0 pointer-events-none select-none">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#e2de00]/5 blur-[150px]" />
         </div>
 
-        {/* Back Link */}
+        
         <div className="absolute top-36 left-6 md:left-12 z-20">
 
         </div>
 
-        {/* Giant Watermark Text behind the jacket */}
+        
         <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden pointer-events-none select-none">
           <h2
             className="font-display font-black text-[11vw] uppercase leading-none tracking-[0.05em] text-transparent text-center select-none opacity-100"
@@ -103,7 +103,7 @@ export default function ProductDetail() {
           </h2>
         </div>
 
-        {/* Centered Product Image */}
+        
         <div className="relative z-10 flex items-center justify-center h-[70%] w-full max-w-4xl px-6">
           <motion.img
             src={product.image}
@@ -118,12 +118,12 @@ export default function ProductDetail() {
 
       <section className="relative z-20 max-w-4xl mx-4 md:mx-auto bg-black text-white rounded-[24px] py-16 px-6 md:px-12 flex flex-col items-center text-center mt-[-8vh] shadow-2xl border border-white/5 mb-16">
 
-        {/* Product Name Title */}
+        
         <h2 className="font-display font-black text-4xl sm:text-5xl md:text-[54px] uppercase tracking-wider text-white mb-10">
           {product.name}
         </h2>
 
-        {/* Centered Description Lines */}
+        
         <div className="space-y-4 max-w-3xl mb-16 select-text leading-relaxed">
           <p className="text-white/80 text-sm sm:text-base font-light">Custom product exclusively for customer.</p>
           {sentences.map((sentence, idx) => (
@@ -136,7 +136,7 @@ export default function ProductDetail() {
           </p>
         </div>
 
-        {/* 4 Performance Spec Icons Grid */}
+        
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 max-w-4xl w-full mb-20">
           {performanceSpecs.map((spec, idx) => (
             <div key={idx} className="flex flex-col items-center space-y-4">
@@ -157,9 +157,9 @@ export default function ProductDetail() {
           ))}
         </div>
 
-        {/* Technology & Feature detail link cards */}
+        
         <div className="flex flex-col sm:flex-row gap-6 max-w-2xl w-full justify-center items-center mt-6 select-none">
-          {/* Card 1: Technology */}
+          
           <Link
             to={`/technology/${product.technologyId}`}
             className="flex-1 w-full max-w-[240px] bg-black border border-white/30 rounded-2xl p-6 hover:border-white/85 transition-colors flex flex-col items-center justify-center text-center select-none"
@@ -177,7 +177,7 @@ export default function ProductDetail() {
             </div>
           </Link>
 
-          {/* Card 2: Feature */}
+          
           <Link
             to="/features"
             className="flex-1 w-full max-w-[240px] bg-black border border-white/30 rounded-2xl p-6 hover:border-white/85 transition-colors flex flex-col items-center justify-center text-center select-none"
@@ -203,13 +203,13 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      {/* 3. Embedded Product Contact Form (Part 3 - Matches Screenshot 3) */}
+      
       <section
         id="product-contact-form"
         className="relative z-30 max-w-4xl mx-auto px-6 md:px-12 pb-28 flex flex-col items-center w-full mt-12"
       >
         <div className="w-full flex flex-col items-start">
-          {/* Title */}
+          
           <h2 className="font-display font-black text-2xl sm:text-3xl md:text-[34px] text-white text-left tracking-normal max-w-2xl mb-14 leading-tight md:-ml-4">
             Contact us for information<br />
             on this product
@@ -229,7 +229,7 @@ export default function ProductDetail() {
             </div>
           ) : (
             <form onSubmit={handleFormSubmit} className="space-y-12 w-full text-left select-text">
-              {/* Input Grid */}
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
                 <div className="relative">
                   <input
@@ -272,7 +272,7 @@ export default function ProductDetail() {
                 />
               </div>
 
-              {/* Privacy Checkbox */}
+              
               <div className="flex items-start space-x-3 pt-4 select-none">
                 <input
                   type="checkbox"
@@ -288,7 +288,7 @@ export default function ProductDetail() {
                 </label>
               </div>
 
-              {/* Submit Button */}
+              
               <div className="pt-4 select-none flex justify-start">
                 <button
                   type="submit"

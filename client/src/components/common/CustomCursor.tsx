@@ -66,7 +66,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Centered Dot - moves instantly with pointer */}
+      
       <motion.div
         className="fixed top-0 left-0 w-1.5 h-1.5 bg-[#e2de00] rounded-full pointer-events-none z-50 mix-blend-difference"
         style={{
@@ -77,7 +77,7 @@ export default function CustomCursor() {
         }}
       />
 
-      {/* Stalker Circle - moves smoothly with spring */}
+      
       <motion.div
         className="fixed top-0 left-0 border border-[#e2de00] rounded-full pointer-events-none z-50 flex items-center justify-center"
         style={{
