@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/layout/Navbar";
 import Sidebar from "../components/layout/Sidebar";
 import Footer from "../components/layout/Footer";
-import CustomCursor from "../components/common/CustomCursor";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -56,8 +55,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="flex flex-col min-h-screen bg-neutral-950 text-white select-none">
       
-      <CustomCursor />
-
       
       <AnimatePresence>
         {transitioning && (
