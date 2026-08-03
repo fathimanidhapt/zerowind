@@ -263,21 +263,56 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute top-[110px] right-0 w-full md:w-[36%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-hidden rounded-bl-3xl pointer-events-auto"
+              className="absolute top-[110px] right-0 w-full md:w-[36%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-y-auto max-h-[calc(100vh-110px)] rounded-bl-3xl pointer-events-auto"
             >
-              <div className="w-full pt-16 pb-12 px-10 flex flex-col items-end">
-                <div className="flex flex-col items-end gap-6 w-full mb-16">
+              <div className="w-full pt-12 pb-12 px-10 flex flex-col items-end">
+                <div className="flex flex-col items-end gap-6 w-full mb-12">
                   <Link to="/" onClick={() => setShowMenu(false)} className="text-white text-5xl md:text-[64px] font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
                     HOME
                   </Link>
-                  <Link to="/news" onClick={() => setShowMenu(false)} className="text-white text-5xl md:text-[64px] font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
+
+                  {/* Technologies Submenu for Mobile View */}
+                  <div className="md:hidden flex flex-col items-end gap-2 w-full border-t border-white/5 pt-4 mt-2">
+                    <span className="text-neutral-500 text-[10px] font-bold tracking-widest uppercase">Technologies</span>
+                    <div className="flex flex-wrap justify-end gap-x-4 gap-y-2 text-right">
+                      {techCards.map((card, idx) => (
+                        <Link
+                          key={idx}
+                          to={`/technology/${card.title.toLowerCase()}`}
+                          onClick={() => setShowMenu(false)}
+                          className="text-white/80 hover:text-[#dfff00] text-sm font-semibold tracking-wider uppercase"
+                        >
+                          {card.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Features Submenu for Mobile View */}
+                  <div className="md:hidden flex flex-col items-end gap-2 w-full border-t border-white/5 pt-4 mt-2 mb-2">
+                    <span className="text-neutral-500 text-[10px] font-bold tracking-widest uppercase">Features</span>
+                    <div className="flex gap-x-4 text-right">
+                      {featureCards.map((card, idx) => (
+                        <Link
+                          key={idx}
+                          to={`/features#${card.title.toLowerCase()}`}
+                          onClick={() => setShowMenu(false)}
+                          className="text-white/80 hover:text-[#dfff00] text-sm font-semibold tracking-wider uppercase"
+                        >
+                          {card.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  <Link to="/news" onClick={() => setShowMenu(false)} className="text-white text-5xl md:text-[64px] font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors border-t md:border-t-0 border-white/5 pt-4 md:pt-0 w-full md:w-auto text-end" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
                     NEWS
                   </Link>
                   <Link to="/contacts" onClick={() => setShowMenu(false)} className="text-white text-5xl md:text-[64px] font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
                     CONTACTS
                   </Link>
                 </div>
-                <div className="flex items-center gap-4 text-[14px] font-bold tracking-widest uppercase">
+                <div className="flex items-center gap-4 text-[14px] font-bold tracking-widest uppercase border-t border-white/5 pt-6 w-full justify-end">
                   <button className="text-gray-400 hover:text-white transition-colors">IT</button>
                   <span className="text-gray-500 mb-1">.</span>
                   <button className="text-[#dfff00] transition-colors">EN</button>
