@@ -263,56 +263,106 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute top-[110px] right-0 w-full md:w-[36%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-y-auto max-h-[calc(100vh-110px)] rounded-bl-3xl pointer-events-auto"
+              className="absolute top-[110px] right-0 w-full md:w-[38%] md:min-w-[480px] bg-[#222222] shadow-2xl z-40 overflow-y-auto max-h-[calc(100vh-110px)] rounded-bl-3xl pointer-events-auto"
             >
-              <div className="w-full pt-12 pb-12 px-10 flex flex-col items-end">
-                <div className="flex flex-col items-end gap-6 w-full mb-12">
-                  <Link to="/" onClick={() => setShowMenu(false)} className="text-white text-5xl md:text-[64px] font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
-                    HOME
-                  </Link>
-
-                  {/* Technologies Submenu for Mobile View */}
-                  <div className="md:hidden flex flex-col items-end gap-2 w-full border-t border-white/5 pt-4 mt-2">
-                    <span className="text-neutral-500 text-[10px] font-bold tracking-widest uppercase">Technologies</span>
-                    <div className="flex flex-wrap justify-end gap-x-4 gap-y-2 text-right">
-                      {techCards.map((card, idx) => (
-                        <Link
-                          key={idx}
-                          to={`/technology/${card.title.toLowerCase()}`}
-                          onClick={() => setShowMenu(false)}
-                          className="text-white/80 hover:text-[#dfff00] text-sm font-semibold tracking-wider uppercase"
-                        >
-                          {card.title}
-                        </Link>
-                      ))}
+              <div className="w-full pt-10 pb-12 px-10 flex flex-col items-center">
+                <div className="flex flex-col items-center gap-10 w-full mb-12">
+                  
+                  {/* 1. TECHNOLOGY SECTION */}
+                  <div className="w-full border-b border-white/5 pb-8">
+                    <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
+                      Technology
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4 w-full max-w-xl mx-auto">
+                      {techCards.map((card, idx) => {
+                        const path = `/technology/${card.title.toLowerCase()}`;
+                        return (
+                          <Link
+                            to={path}
+                            key={idx}
+                            onClick={() => setShowMenu(false)}
+                            className={`relative rounded-xl overflow-hidden cursor-pointer group block bg-black ${card.colSpan === 2 ? 'col-span-2 aspect-[24/8]' : 'col-span-1 aspect-[16/10]'}`}
+                          >
+                            <img
+                              src={card.image}
+                              alt={card.title}
+                              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                            />
+                            <div className="absolute inset-0 bg-black/45 group-hover:bg-[#dfff00]/20 transition-colors duration-300"></div>
+                            
+                            {/* Brand styled title overlay */}
+                            <div className="absolute inset-0 flex items-center justify-center p-4">
+                              <span className="text-white font-display font-black uppercase text-xl md:text-2xl tracking-[0.1em] italic select-none pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                                {card.title}
+                              </span>
+                            </div>
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
 
-                  {/* Features Submenu for Mobile View */}
-                  <div className="md:hidden flex flex-col items-end gap-2 w-full border-t border-white/5 pt-4 mt-2 mb-2">
-                    <span className="text-neutral-500 text-[10px] font-bold tracking-widest uppercase">Features</span>
-                    <div className="flex gap-x-4 text-right">
+                  {/* 2. FEATURES SECTION */}
+                  <div className="w-full border-b border-white/5 pb-8">
+                    <h3 className="text-white text-center text-xs font-bold tracking-[0.3em] uppercase mb-6 font-display">
+                      Features
+                    </h3>
+                    <div className="flex flex-col gap-4 w-full max-w-xl mx-auto">
                       {featureCards.map((card, idx) => (
                         <Link
-                          key={idx}
                           to={`/features#${card.title.toLowerCase()}`}
-                          onClick={() => setShowMenu(false)}
-                          className="text-white/80 hover:text-[#dfff00] text-sm font-semibold tracking-wider uppercase"
+                          key={idx}
+                          onClick={() => {
+                            setShowMenu(false);
+                            if (window.location.pathname === '/features') {
+                              const el = document.getElementById(card.title.toLowerCase());
+                              if (el) {
+                                el.scrollIntoView({ behavior: 'smooth' });
+                              }
+                            }
+                          }}
+                          className="relative w-full rounded-2xl border border-white/10 p-5 flex flex-row items-center gap-6 cursor-pointer group bg-[#1e1e1e] hover:bg-[#151515] hover:border-white/30 transition-all duration-300"
                         >
-                          {card.title}
+                          <img
+                            src={card.icon}
+                            alt={`${card.title} icon`}
+                            className={`w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110 shrink-0 ${
+                              card.title === 'RELIFE' ? 'animate-spin' : ''
+                            }`}
+                            style={
+                              card.title === 'RELIFE'
+                                ? { animationDuration: '12s' }
+                                : { filter: 'invert(1) brightness(2)' }
+                            }
+                          />
+                          <div className="flex flex-col items-start gap-1 text-left">
+                            <span className="text-white font-display font-extrabold uppercase text-sm tracking-wider">
+                              {card.title}
+                            </span>
+                            <p className="text-white/60 font-body text-[10px] tracking-wider uppercase">
+                              {card.title === 'ZWR' ? 'WATER REPELLENT TREATMENT' : 'ECO-FRIENDLY SOLUTIONS'}
+                            </p>
+                          </div>
                         </Link>
                       ))}
                     </div>
                   </div>
 
-                  <Link to="/news" onClick={() => setShowMenu(false)} className="text-white text-5xl md:text-[64px] font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors border-t md:border-t-0 border-white/5 pt-4 md:pt-0 w-full md:w-auto text-end" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
-                    NEWS
-                  </Link>
-                  <Link to="/contacts" onClick={() => setShowMenu(false)} className="text-white text-5xl md:text-[64px] font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
-                    CONTACTS
-                  </Link>
+                  {/* 3. LINKS SECTION */}
+                  <div className="flex flex-col items-center gap-6 w-full pt-4">
+                    <Link to="/" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
+                      HOME
+                    </Link>
+                    <Link to="/news" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
+                      NEWS
+                    </Link>
+                    <Link to="/contacts" onClick={() => setShowMenu(false)} className="text-white text-4xl md:text-5xl font-black uppercase tracking-wider hover:text-[#dfff00] transition-colors" style={{ fontFamily: '"Arial Black", "Impact", sans-serif', lineHeight: '1' }}>
+                      CONTACTS
+                    </Link>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4 text-[14px] font-bold tracking-widest uppercase border-t border-white/5 pt-6 w-full justify-end">
+
+                <div className="flex items-center gap-4 text-[14px] font-bold tracking-widest uppercase border-t border-white/5 pt-6 w-full justify-center">
                   <button className="text-gray-400 hover:text-white transition-colors">IT</button>
                   <span className="text-gray-500 mb-1">.</span>
                   <button className="text-[#dfff00] transition-colors">EN</button>
